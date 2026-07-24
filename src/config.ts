@@ -13,7 +13,7 @@ export interface Project {
     title: string;
     category: "ai" | "fullstack" | "design";
     technologies: string;
-    image: string;
+    image?: string;
     description: string;
     github?: string;
     liveDemo?: string;
@@ -220,69 +220,135 @@ export const config: Config = {
     projects: [
         {
             id: 1,
-            title: "ROAM — Multi-Agent Travel Orchestrator",
-            category: "ai",
-            technologies: "Python, LangGraph, LangChain, PostgreSQL, OpenAI API, React",
-            image: "/images/roam.png",
-            description: "An autonomous multi-agent orchestration system that handles travel planning, context retention, and dynamic task execution using graph memory.",
-            github: "https://github.com/Saad-Dev13",
+            title: "SYNC — Student Collaboration and Project Management Platform",
+            category: "fullstack",
+            technologies: "Node.js, Express.js, MongoDB, Mongoose, React 19, Vite, Tailwind CSS, Python, Flask, Scikit-learn, Socket.io, Tazapay API, Firebase, Docker",
+            image: undefined,
+            description: "An educational and industrial collaboration ecosystem connecting students, supervisors, and organizations with AI suitability ranking, ML price estimation, and Tazapay escrow payments.",
+            github: "https://github.com/HuzefaAbid/SYNC/",
             liveDemo: undefined,
-            details: "Built using LangGraph to coordinate specialized sub-agents (flight search, hotel booking, itinerary planner). Each agent maintains persistent state through a shared memory graph, enabling context-aware multi-turn conversations and autonomous decision making."
+            details: "Architected as a multi-module monorepo with a Node.js/Express REST backend, React 19 web interface, and Flask ML regression engine. Features automated 40-point applicant suitability scoring, dynamic project price estimation, real-time Socket.io chat, and multi-milestone Tazapay escrow payments with webhook synchronization."
         },
         {
             id: 2,
-            title: "Vehicle Re-Identification System",
+            title: "Multi-Agent Orchestration with MCP and A2A",
             category: "ai",
-            technologies: "Python, PyTorch, YOLO, OpenCV, Deep Learning",
-            image: "/images/vehicle-reid.png",
-            description: "Advanced computer vision platform built during NIE research internship to track and re-identify vehicles across multiple security camera feeds.",
-            github: undefined,
+            technologies: "Python, Google GenAI SDK (ADK), Gemini API, FastAPI, MCP, Uvicorn, PowerShell",
+            image: undefined,
+            description: "A production-ready multi-agent orchestration architecture integrating Model Context Protocol (MCP) and Agent-to-Agent (A2A) communication patterns.",
+            github: "https://github.com/Saad-Dev13/Multi_Agent_Orchestration_with_MCP_and_A2A",
             liveDemo: undefined,
-            details: "Implemented a multi-camera vehicle re-ID pipeline using YOLO for detection and a custom deep metric learning model for cross-camera matching. Optimized for edge deployment on low-power embedded devices."
+            details: "Features a central host orchestrator powered by Gemini 2.0 Flash that dynamically discovers registered FastAPI microservice agents and MCP tool servers. Supports live command execution via a terminal server, remote arithmetic servers, and delegated specialized agent tasks with streaming status updates."
         },
         {
             id: 3,
-            title: "Portfolio Website",
-            category: "fullstack",
-            technologies: "React, TypeScript, Vite, GSAP, Three.js, CSS",
-            image: "/images/portfolio.png",
-            description: "This very portfolio — a high-performance, animated personal website with 3D character model, smooth scroll, and dynamic content from a central config.",
-            github: "https://github.com/Saad-Dev13",
+            title: "AI-Based Vehicle Re-identification System",
+            category: "ai",
+            technologies: "Python, PyTorch, YOLOv8, OpenCV, ResNet, MobileNetV2, SQLite, PaddleOCR, ByteTrack",
+            image: undefined,
+            description: "A comprehensive vehicle re-identification and tracking system featuring three operational modes across single-image reference, database tracking, and live CCTV feeds.",
+            github: "https://github.com/Saad-Dev13/vehicle-reidentification-using-YOLO",
             liveDemo: undefined,
-            details: "Built with Vite + React + TypeScript. Uses GSAP ScrollTrigger for horizontal scroll animation, Lenis for smooth scrolling, and a Three.js 3D character model. All content driven from a typed config file."
+            details: "Developed as a research project at the National Institute of Electronics (NIE). Combines YOLOv8 object detection with traditional computer vision (HOG, SIFT, Histograms) and deep learning feature extraction (ResNet, MobileNetV2) to match vehicles across different surveillance camera angles and timeframes with persistent SQLite storage."
         },
         {
             id: 4,
-            title: "Full-Stack App — Coming Soon",
+            title: "Mohammad Saad Iqbal — Personal Portfolio Website",
             category: "fullstack",
-            technologies: "React, Node.js, Express, PostgreSQL, TypeScript",
-            image: "/images/project4.png",
-            description: "A full-stack web application currently in development. Focused on scalable backend architecture and clean UI/UX.",
-            github: undefined,
-            liveDemo: undefined,
-            details: "Project in active development. Will feature REST API with Express, PostgreSQL database, JWT authentication, and a React frontend with clean, accessible design."
+            technologies: "React, TypeScript, Three.js, React Three Fiber, GSAP, Vite, Lenis, Vercel",
+            image: undefined,
+            description: "A high-performance, interactive 3D portfolio website featuring custom WebGL 3D model head tracking, smooth scroll animations, and dynamic project showcases.",
+            github: "https://github.com/Saad-Dev13/My_Portfolio_Website",
+            liveDemo: "https://saad-portfolio-one.vercel.app/",
+            details: "Built using React 18 and Three.js (@react-three/fiber/@react-three/drei) for real-time 3D rendering alongside GSAP ScrollTrigger for interactive timelines. Features a data-driven architecture powered by a central TypeScript config file driving certificates, domain-filtered project grids, interactive skill panels, and multi-resume popovers."
         },
         {
             id: 5,
-            title: "Brand Identity — Design Project",
-            category: "design",
-            technologies: "Adobe Illustrator, Photoshop, Figma",
-            image: "/images/design1.png",
-            description: "Complete visual identity design including logo suite, color systems, typography, and brand guidelines for a digital-first client.",
-            github: undefined,
+            title: "Digital Twin AI Engine",
+            category: "ai",
+            technologies: "Python, FastAPI, Next.js, TypeScript, LangChain, ChromaDB, SentenceTransformers, Groq API, Gemini API, Docker",
+            image: undefined,
+            description: "A privacy-preserving, local-first behavioral cloning and RAG platform that transforms chat exports into an AI avatar replicating personal communication style.",
+            github: "https://github.com/Saad-Dev13/digital-twin",
             liveDemo: undefined,
-            details: "Delivered full brand identity: primary/secondary logo variants, color palette, typography system, brand usage guidelines, and social media templates. Designed in Figma and finalized in Adobe Illustrator."
+            details: "Built with a Next.js 14 dashboard and FastAPI backend. Processes unstructured WhatsApp export logs to extract dialogue pairs and generate 384-dimensional dense vector embeddings stored in a local persistent ChromaDB. Features a 4-step wizard, dual-cloud inference with automatic failover (Groq Llama 3 to Gemini), optional QLoRA fine-tuning support, and Docker containerization."
         },
         {
             id: 6,
-            title: "UI/UX Design Showcase",
-            category: "design",
-            technologies: "Figma, Adobe XD, CSS Animations",
-            image: "/images/design2.png",
-            description: "A curated showcase of interface design work — dashboards, mobile apps, and web landing pages with premium aesthetics.",
-            github: undefined,
+            title: "ROAM v1: Autonomous Multi-Agent Travel Orchestrator",
+            category: "ai",
+            technologies: "Python, LangGraph, Groq API (Llama 3.3 70B), PostgreSQL, AviationStack API, Tavily API, Streamlit, psycopg3",
+            image: undefined,
+            description: "An enterprise-grade, stateful multi-agent travel orchestration engine built with LangGraph for real-time flight lookups, hotel discovery, and itinerary planning.",
+            github: "https://github.com/Saad-Dev13/ROAM_multi-agent-travel-orchestrator-v1",
             liveDemo: undefined,
-            details: "Collection of UI/UX design projects including an analytics dashboard, mobile food delivery app, and SaaS landing page. Each with full design system documentation."
+            details: "Coordinates specialized AI agents (Flight Agent, Hotel Agent, Itinerary Planner, Final Response Agent) using a LangGraph StateGraph. Features stateful thread checkpointing powered by PostgreSQL with connection pooling, high-speed LLM inference via Groq LPU (Llama 3.3 70B), real-time external API integrations, and automatic in-memory fallback handling."
+        },
+        {
+            id: 7,
+            title: "ROAM v2 — Autonomous Multi-Agent Travel Orchestrator",
+            category: "ai",
+            technologies: "Python, LangGraph, Model Context Protocol (MCP), FastMCP, Groq API (Llama 3.3 70B), PostgreSQL, Streamlit, Tavily MCP, AviationStack MCP, OpenWeather API",
+            image: undefined,
+            description: "An enterprise-grade, stateful multi-agent travel orchestrator built on LangGraph and the Model Context Protocol (MCP) for real-time flight lookups, hotel discovery, and weather forecasts.",
+            github: "https://github.com/Saad-Dev13/ROAM_multi-agent-travel-orchestrator-v2",
+            liveDemo: undefined,
+            details: "Upgraded to a decoupled Model Context Protocol (MCP) architecture using MultiServerMCPClient across Stdio and Streamable HTTP transports. Coordinates specialized agents (Flight, Hotel, Weather, Itinerary Planner) with real-time tool execution, persistent PostgreSQL state checkpointing, custom FastMCP Weather Server integration, and a Streamlit dashboard."
+        },
+        {
+            id: 8,
+            title: "TOPAZ-VBE: Financial and Tactical Operations Simulator",
+            category: "fullstack",
+            technologies: "React, TypeScript, Vite, Tailwind CSS v4, Zustand, Recharts, Lucide React",
+            image: undefined,
+            description: "A high-fidelity, tick-based business environment simulator providing multi-dimensional manufacturing enterprise modeling, dynamic demand algorithms, and double-entry bookkeeping.",
+            github: "https://github.com/Saad-Dev13/TOPAZ-VBE-Financial-and-Tactical-Operations-Simulator",
+            liveDemo: undefined,
+            details: "Engineered for Strategic Management Control at COMSATS University Islamabad. Features a custom Windows 95-styled UI system built with Tailwind CSS v4 and React. Simulates real-time logistics, production worker efficiency, dynamic regional demand, automated hysteresis inventory refilling, and persistent Zustand-based financial reporting (Income Statements, Balance Sheets, General Ledger)."
+        },
+        {
+            id: 9,
+            title: "EventEase — Complete Event Management System",
+            category: "fullstack",
+            technologies: "Node.js, Express.js, MongoDB, Mongoose, React, React Router DOM, Axios, JWT, bcrypt, Vite",
+            image: undefined,
+            description: "A full-stack MERN event management application featuring role-based access control, a protected admin dashboard, and a dark-themed UI.",
+            github: "https://github.com/Saad-Dev13/eventease3",
+            liveDemo: undefined,
+            details: "Built using the MERN stack with JWT authentication and bcrypt password security. Features an administrative dashboard for event creation, contact message management, and dynamic statistics alongside a responsive card-based public event showcase and interactive contact features."
+        },
+        {
+            id: 10,
+            title: "Connect — Social + Professional Flutter App",
+            category: "fullstack",
+            technologies: "Flutter, Dart, Firebase Auth, Cloud Firestore, Firebase Storage, Jitsi Meet SDK, Material Design",
+            image: undefined,
+            description: "A cross-platform Flutter application combining social networking with professional collaboration, featuring real-time feeds, video conferencing, and project management.",
+            github: "https://github.com/Saad-Dev13/ConnectApp",
+            liveDemo: undefined,
+            details: "Built with Flutter and a complete Firebase backend (Auth, Firestore, and Storage). Integrates the Jitsi Meet SDK for real-time video conferencing, allowing users to create rooms, manage profiles, share image/text feeds, and post project listings with timestamps and pricing."
+        },
+        {
+            id: 11,
+            title: "Opalumpus — Travel and Tour Agency MERN Stack Application",
+            category: "fullstack",
+            technologies: "Node.js, Express.js, MongoDB, Mongoose, React, JavaScript, CSS3",
+            image: undefined,
+            description: "A full-stack travel and tour agency platform enabling destination browsing for users and a secure administrative panel for tour management.",
+            github: "https://github.com/Saad-Dev13/Opalumpus",
+            liveDemo: undefined,
+            details: "Architected using the MERN stack with RESTful Express endpoints and MongoDB data modeling. Features an authenticated admin dashboard supporting full CRUD operations for managing trip packages, itineraries, and destination listings."
+        },
+        {
+            id: 12,
+            title: "Tic Tac Toe — Unbeatable Engine",
+            category: "fullstack",
+            technologies: "Python, CLI",
+            image: undefined,
+            description: "A terminal-based Tic Tac Toe game developed in pure Python featuring a single-player mode with an unbeatable computer decision algorithm.",
+            github: "https://github.com/Saad-Dev13/TIcTacToe-_if_elif_only",
+            liveDemo: undefined,
+            details: "Built as a first-semester ICT project to demonstrate fundamental control flow and conditional decision logic in Python. Implemented purely with core control structures, featuring a two-player local mode and a single-player mode against a hardcoded algorithmic strategy."
         }
     ],
     contact: {
