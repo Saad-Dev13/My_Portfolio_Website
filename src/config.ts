@@ -130,7 +130,7 @@ export const config: Config = {
         {
             position: "Campus Co-leader",
             company: "AWS Student Builder Group at CUI",
-            period: "May 2026 - Present",
+            period: "Oct 2024 - Present",
             location: "Islamabad, Pakistan",
             description: "Spearheading campus-wide AWS Cloud community growth, technical workshops, and cloud literacy.",
             responsibilities: [
